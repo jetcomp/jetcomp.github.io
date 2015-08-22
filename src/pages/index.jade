@@ -112,6 +112,54 @@ html(lang="en")
             label
               | Services<br>
               | For You
+          .pricing.tile.animated.flipInX.flipInTop
+            .gallery.autoplay.items-5.pull-right
+              .control-operator(id="#home/pricing-tuneup")
+              .control-operator(id="#home/pricing-antimalware")
+              .control-operator(id="#home/pricing-transfer")
+              .control-operator(id="#home/pricing-restoration")
+              .control-operator(id="#home/pricing-housecall")
+              figure#tuneup.item(data-layzr="img/specials/tuneup.jpg" data-layzr-bg style="position: absolute")
+                div
+                  .xlg
+                    | Cleaning and<br>
+                    | Tune-Up
+                  .xxl
+                    strong $39<sup><small>.99</small></sup>
+              figure#antimalware.item(data-layzr="img/specials/antimalware.jpg" data-layzr-bg)
+                div
+                  .xlg
+                    | Virus and<br>
+                    | Malware Removal
+                  small <em>Starting from:</em>
+                  .xxl
+                    strong $49<sup><small>.99</small></sup>
+              figure#transfer.item(data-layzr="img/specials/transfer.jpg" data-layzr-bg)
+                div
+                  .xlg
+                    | Files and Settings<br>
+                    | Transfer
+                  small <em>Starting from:</em>
+                  .xxl
+                    strong $59<sup><small>.99</small></sup>
+              figure#restoration.item(data-layzr="img/specials/restoration.jpg" data-layzr-bg)
+                div
+                  .xlg Complete Restoration
+                  .xxl
+                    strong $79<sup><small>.99</small></sup>
+              figure#housecall.item(data-layzr="img/specials/housecall.jpg" data-layzr-bg)
+                div
+                  .xlg
+                    | Need Us To Come<br>
+                    | To You?
+                  .lg
+                    strong Call for a quote
+              .controls
+                a.control-button(href="#home/pricing-tuneup") &bull;
+                a.control-button(href="#home/pricing-antimalware") &bull;
+                a.control-button(href="#home/pricing-transfer") &bull;
+                a.control-button(href="#home/pricing-restoration") &bull;
+                a.control-button(href="#home/pricing-housecall") &bull;
           a.sbs.navlink.tile.animated.flipInX.flipInTop(href="#sbs")
             img.bg(src="img/blank.png" data-layzr="img/bg/sbs.jpg")
             label

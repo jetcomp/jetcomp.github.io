@@ -11,12 +11,19 @@
     margin: 0;
     height: 100%;
     background-size: cover;
+    background-position: center;
+
+    &:first-of-type {
+      position: absolute;
+    }
 
     & > div {
       margin: auto;
       min-width: 75%;
       padding: 0.5em;
-      background: rgba(255, 255, 255, 0.6);
+      color: #000;
+      text-shadow: none;
+      background: rgba(255, 255, 255, 0.7);
     }
   }
 }

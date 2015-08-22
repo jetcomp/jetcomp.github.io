@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Tweets by @JetCompPSL - Jet Computers
+    meta(http-equiv="Content-Language" content="en")
+    style.
+      body { margin: 0; padding: 2px; }
+  body
+    .twitter-timeline(data-dnt="true" data-widget-id="633360408112267264" data-chrome="nofooter")
+      script.
+        window.twttr = (function(d, s, id) {
+          var js,
+              fjs = d.getElementsByTagName(s)[0],
+              t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "//platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+         
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+         
+          return t;
+        }(document, "script", "twitter-wjs"));

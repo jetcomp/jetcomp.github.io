@@ -1,0 +1,140 @@
+html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  // overflow: hidden;
+  background-color: #fff;
+}
+
+ul {
+  display: inline-block;
+}
+
+form,
+p,
+ul {
+  line-height: 125%;
+  text-align: left;
+}
+
+iframe {
+  border: none;
+}
+
+.page {
+  margin: 1em 0 70px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page .content {
+  margin: auto;
+  max-width: 1200px;
+  padding: 1.5em;
+  position: relative;
+  text-align: center;
+  background: #fff;
+  box-shadow: #333 0 0 0.2em 0.1em;
+}
+
+.page.home .content {
+  padding: initial;
+  background: initial;
+  box-shadow: none;
+}
+
+.special-badge {
+  width: 70%;
+  position: absolute;
+  top: -15%;
+  right: -15%;
+}
+
+.backbtn {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: url('../img/back.png') center/cover no-repeat;
+  border: none;
+  box-shadow: inset rgba(0, 0, 0, 0.55) 0.1em -0.05em 0.1em 0.05em;
+  text-decoration: none;
+}
+
+#ph {
+  visibility: hidden;
+  margin: auto;
+  max-width: 960px;
+  text-align: center;
+}
+
+#ph > a {
+  display: inline-block;
+  max-width: 600px;
+  text-align: center;
+}
+
+#ph > a > .logo,
+#ph > .special {
+  max-width: 100%;
+}
+
+#pf {
+  visibility: visible;
+  position: fixed;
+  bottom: 10px;
+  padding-left: 13px;
+}
+
+.vcard {
+  margin: auto;
+  max-width: 720px;
+  height: 1.5em;
+
+  & .fn.org { display: none; }
+}
+
+// #social > * {
+//   animation-play-state: paused;
+
+//   &:hover {
+//     animation-play-state: running;
+//   }
+// }
+
+.pagebar {
+  margin-top: 2.5em;
+  text-align: center;
+  & > span {
+    box-shadow: #333 1px 1px 2px;
+    background-color: #fff;
+    padding: 12px 0.5em 7px;
+    vertical-align: sub;
+
+    &:first-child {
+      padding: 0 0.5em;
+      background-color: #000;
+      color: #fff11f;
+      font-size: 200%;
+      line-height: 36px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.avatar {
+  width: 60%;
+  padding: 3px;
+  border-radius: 50%;
+  box-shadow: inset 2px 2px 9px #333;
+
+  &.sam {
+    background: url('../img/pics/sam.jpg') center/contain;
+  }
+
+  &.brian {
+    background: url('../img/pics/brian.jpg') center/contain;
+  }
+}
+ 

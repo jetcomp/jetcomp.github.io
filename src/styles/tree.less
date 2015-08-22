@@ -1,0 +1,16 @@
+/* display | like
+     stuff | this */
+.tree {
+  & > .tree-left {
+    display: inline-block;
+    text-align: right;
+    padding-right: 4px;
+    border-right: 2px solid #aaa;
+  }
+
+  & > .tree-right {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+  }
+}

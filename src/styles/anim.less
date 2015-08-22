@@ -1,0 +1,169 @@
+/* bouncy hover effect (for social links) */
+
+.animated.hoverbounce:hover {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+/* long-perspective flipIn* derived from animate.css
+   FIXME: should custom-generate animate.css instead */
+
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(6000px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(6000px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(6000px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(6000px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(6000px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(6000px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(6000px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(6000px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(6000px);
+    transform: perspective(6000px);
+  }
+}
+
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(6000px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(6000px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(6000px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(6000px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(6000px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(6000px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(6000px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(6000px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(6000px);
+    transform: perspective(6000px);
+  }
+}
+
+.animated.flipInX {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+
+@-webkit-keyframes flipInY {
+  from {
+    -webkit-transform: perspective(6000px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(6000px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(6000px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(6000px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(6000px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(6000px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(6000px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(6000px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(6000px);
+    transform: perspective(6000px);
+  }
+}
+
+@keyframes flipInY {
+  from {
+    -webkit-transform: perspective(6000px) rotate3d(0, 1, 0, 90deg);
+    transform: perspective(6000px) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(6000px) rotate3d(0, 1, 0, -20deg);
+    transform: perspective(6000px) rotate3d(0, 1, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(6000px) rotate3d(0, 1, 0, 10deg);
+    transform: perspective(6000px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(6000px) rotate3d(0, 1, 0, -5deg);
+    transform: perspective(6000px) rotate3d(0, 1, 0, -5deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(6000px);
+    transform: perspective(6000px);
+  }
+}
+
+.animated.flipInY {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+
+/* origin helpers for flipIn* */
+
+.animated.flipInLeft,
+.animated.flipInTop {
+  transform-origin: left top;
+}
+
+.animated.flipInRight,
+.animated.flipInBottom {
+  transform-origin: right bottom;
+}

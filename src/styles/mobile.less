@@ -1,0 +1,87 @@
+// extra-wide displays
+@media (min-width: 1921px) {
+  .viewport {
+    box-shadow: inset rgba(0, 0, 0, 0.55) 16px 0 9px -14px;
+  }
+}
+
+// small displays
+@media (max-width: 1280px) {
+  .slidez .viewport { padding-right: 5px; padding-left: 5px; }
+}
+
+// extra-small displays
+@media (max-width: 800px) {
+  .vcard > .pull-left {
+    display: block;
+    text-align: left;
+    float: none;
+  }
+
+  .tile {
+    max-width: 290px;
+    margin: 0.6em;
+  }
+
+  .pagebar {
+    margin-top: 3.5em;
+    & > span {
+      display: block;
+    }
+  }
+
+  #pf {
+    position: relative;
+  }
+}
+
+// mobile displays
+@media (max-width: 640px) {
+  .tile {
+    min-width: 98%;
+    margin: 0.5em auto;
+  }
+
+  .vcard {
+    display: inline-flex;
+  }
+
+  .tree > .tree-left {
+    border-right: none;
+  }
+
+  .content > h1:first-of-type {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  // helpers
+  .no-mobile {
+    display: none;
+  }
+
+  .pull-left-mobile {
+    float: left;
+    clear: both;
+  }
+
+  .pull-right-mobile {
+    float: right;
+  }
+
+  .i-mobile {
+    display: inline-block !important;
+    margin: 0 0 0.18em 0.18em !important;
+    width: 64px;
+    height: 64px;
+    padding: 17px 0 !important;
+    box-sizing: border-box !important;
+    box-shadow: #000 0 0 0.08em 0.03em !important;
+    background-color: #fff;
+    color: #0133ee;
+    font-size: 200%;
+    text-shadow: 0px 0px 1px #fff, 1px 1px 1px #e6e6e6, -1px -1px 2px #888;
+  }
+
+  #pf { text-align: center; font-size: 120%; }
+}

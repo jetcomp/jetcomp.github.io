@@ -65,7 +65,7 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      build: {
+      main: {
         files: [
           {
             expand: true,
@@ -73,7 +73,11 @@ module.exports = function(grunt) {
             src: 'main.js',
             dest: 'js/',
             filter: 'isFile'
-          },
+          }
+        ]
+      },
+      deps: {
+        files: [
           {
             expand: true,
             cwd: 'bower_components/font-awesome/fonts',
@@ -98,26 +102,50 @@ module.exports = function(grunt) {
         ]
       }
     },
+    bump: {
+      options: {
+        files: ['package.json'],
+        updateConfigs: [],
+        commit: false,
+        createTag: false,
+        push: false,
+        globalReplace: false,
+        prereleaseName: false,
+        regExp: false
+      }
+    },
     watch: {
       gruntfile: {
         files: 'Gruntfile.js',
-        tasks: ['build', 'watch']
+        tasks: ['build', 'bump', 'watch']
       },
       vendor: {
         files: ['bower_components/**/*'],
-        tasks: ['bower_concat', 'uglify', 'cssmin', 'copy']
+        tasks: ['bower_concat', 'uglify', 'cssmin', 'copy', 'bump'],
+        options: {
+          livereload: true
+        }
       },
       pages: {
         files: ['src/pages/**/*.jade'],
-        tasks: ['jade']
+        tasks: ['jade', 'bump'],
+        options: {
+          livereload: true
+        }
       },
       scripts: {
         files: ['src/scripts/**/*.js', '!src/scripts/**/*.min.js'],
-        tasks: ['uglify']
+        tasks: ['copy:main', 'uglify', 'bump'],
+        options: {
+          livereload: true
+        }
       },
       styles: {
         files: ['src/styles/**/*.less'],
-        tasks: ['less', 'cssmin']
+        tasks: ['less', 'cssmin', 'bump'],
+        options: {
+          livereload: true
+        }
       }
     },
     clean: {
@@ -133,8 +161,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  
   grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('build', ['copy', 'jade', 'htmlmin', 'bower_concat', 'uglify', 'less', 'cssmin']);

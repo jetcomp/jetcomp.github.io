@@ -17,12 +17,33 @@
   iframe {
     border: none;
   }
+  .viewport > header {
+    visibility: hidden;
+    margin: auto;
+    max-width: 960px;
+    text-align: center;
+  }
+  .viewport > header > a {
+    display: inline-block;
+    max-width: 540px;
+    text-align: center;
+  }
+  .viewport > header > a > .logo {
+    width: 800px;
+    max-width: 100%;
+  }
+  .viewport > footer {
+    visibility: visible;
+    position: fixed;
+    bottom: 10px;
+    padding-left: 13px;
+  }
   .page {
     margin: 1em 0 70px;
     width: 100%;
     box-sizing: border-box;
   }
-  .page .content {
+  .page > .content {
     margin: auto;
     max-width: 1200px;
     padding: 1.5em;
@@ -31,7 +52,7 @@
     background: #fff;
     box-shadow: #333 0 0 0.2em 0.1em;
   }
-  .page.home .content {
+  .page.home > .content {
     padding: initial;
     background: initial;
     box-shadow: none;
@@ -52,27 +73,6 @@
     border: none;
     box-shadow: inset rgba(0, 0, 0, 0.55) 0.1em -0.05em 0.1em 0.05em;
     text-decoration: none;
-  }
-  #ph {
-    visibility: hidden;
-    margin: auto;
-    max-width: 960px;
-    text-align: center;
-  }
-  #ph > a {
-    display: inline-block;
-    max-width: 600px;
-    text-align: center;
-  }
-  #ph > a > .logo,
-  #ph > .special {
-    max-width: 100%;
-  }
-  #pf {
-    visibility: visible;
-    position: fixed;
-    bottom: 10px;
-    padding-left: 13px;
   }
   .vcard {
     margin: auto;
@@ -294,9 +294,6 @@
   .icon.hot {
     background: url('../img/hot.png') center / auto 100% no-repeat;
   }
-  .icon.map-pin {
-    background: url('../img/map-pin.png') center / auto 100% no-repeat;
-  }
   li .icon {
     margin-bottom: -2%;
   }
@@ -304,9 +301,10 @@
      stuff | this */
   .tree > .tree-left {
     display: inline-block;
-    text-align: right;
+    margin-right: 3px;
     padding-right: 4px;
     border-right: 2px solid #aaa;
+    text-align: right;
   }
   .tree > .tree-right {
     display: inline-block;
@@ -428,14 +426,6 @@
     width: 524px;
     background-color: #ffcc4d;
   }
-  .tile.twitter > .twitter-timeline {
-    position: absolute;
-    margin: 2px !important;
-    padding-left: 2px !important;
-    box-sizing: border-box;
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.95);
-  }
   .tile.about {
     background-color: #b1bd9c;
   }
@@ -446,7 +436,7 @@
   .tile > label {
     font-size: 280%;
     font-weight: 600;
-    margin-left: 4px;
+    margin-left: 8px;
     position: absolute;
     bottom: 0.5em;
     left: 0;
@@ -509,7 +499,7 @@
   .pagebar > span {
     display: block;
   }
-  #pf {
+  .viewport-footer {
     position: relative;
   }
 }
@@ -531,13 +521,6 @@
   .no-mobile {
     display: none;
   }
-  .pull-left-mobile {
-    float: left;
-    clear: both;
-  }
-  .pull-right-mobile {
-    float: right;
-  }
   .i-mobile {
     display: inline-block !important;
     margin: 0 0 0.18em 0.18em !important;
@@ -551,7 +534,7 @@
     font-size: 200%;
     text-shadow: 0px 0px 1px #ffffff, 1px 1px 1px #e6e6e6, -1px -1px 2px #888888;
   }
-  #pf {
+  .viewport-footer {
     text-align: center;
     font-size: 120%;
   }

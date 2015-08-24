@@ -56,7 +56,7 @@ html(lang="en")
         i.fa.fa-spinner.fa-pulse
         label(for="loading-overlay") Loading... please wait
     #viewport.viewport
-      header#ph.animated
+      header#viewport-header.animated
         a(href="#home")
           img.logo(itemprop="logo" src="img/blank.png" data-layzr="img/brand/ph.png" alt="Jet Computers logo")
         #vcard.vcard
@@ -68,10 +68,10 @@ html(lang="en")
             address.adr.pull-left.no-mobile(itemprop="address" itemscope itemtype="http://schema.org/PostalAddress")
               .street-address(itemprop="streetAddress") 808 SW Glenview Ct
               span.locality(itemprop="addressLocality") Port St Lucie
-              | ,
-              span.region(itemprop="addressRegion") FL
+              | , 
+              span.region(itemprop="addressRegion") FL 
               span.postal-code(itemprop="postalCode") 34953
-              | ,
+              | , 
               abbr.country-name(itemprop="addressCountry" title="United States of America") US
           span.tree.pull-right
             span.tree-left
@@ -87,8 +87,8 @@ html(lang="en")
                 i.fa.fa-phone.fa-fw.i-mobile
               span.tel.no-mobile(itemprop="telephone")
                 | (<span class="value">772) <span class="value">361-<span class="value">8585</span>
-      #pc
-      footer#pf.animated
+      #content-wrapper
+      footer#viewport-footer.animated
         #social
           link(itemprop="url" href="https://jetcomputers.us")
           a.animated.hoverbounce(itemprop="sameAs" href="https://google.com/+JetComputersPortSaintLucie" target="_blank" title="Review us on Google+")

@@ -93,7 +93,7 @@ function changePage(target, orientation) {
       _dbg('startEnter') && console.log(_ts(), 'startEnter', target + ' (' + curPage + ')'),
       $('.page#' + target)
           .toggleClass('zoomIn')
-          .appendTo('#pc')
+          .appendTo('#content-wrapper')
           .one(animEnd, function() {
             _dbg('endEnter') && console.log(_ts(), 'endEnter', target + ' (' + curPage + ')');
             layzr.updateSelector();
@@ -149,10 +149,10 @@ $(document).ready(function() {
               console.log(layzrs, $('[data-layzr]'));
               (--layzrs <= 1) && (
                 _dbg('done') && console.log(_ts(), 'done', page),
-                $('#ph')
+                $('#viewport-header')
                   .css('visibility', 'visible')
                   .addClass('fadeIn'),
-                $('#pf')
+                $('#viewport-footer')
                   .css('visibility', 'visible')
                   .addClass('fadeIn'),
                 $page

@@ -5,14 +5,12 @@
     height: 100%;
     background-color: #fff;
   }
+  h1 {
+    margin-top: 0;
+  }
   ul {
     display: inline-block;
-  }
-  form,
-  p,
-  ul {
-    line-height: 125%;
-    text-align: left;
+    padding: 9px;
   }
   iframe {
     border: none;
@@ -32,6 +30,15 @@
     width: 800px;
     max-width: 100%;
   }
+  .viewport > header > .vcard {
+    margin: auto;
+    max-width: 720px;
+    height: 2.5em;
+    padding: 12px 0 7px;
+  }
+  .viewport > header > .vcard .fn.org {
+    display: none;
+  }
   .viewport > footer {
     visibility: visible;
     position: fixed;
@@ -46,7 +53,7 @@
   .page > .content {
     margin: auto;
     max-width: 1200px;
-    padding: 1.5em;
+    padding: 1.5em 1.5em 2em;
     position: relative;
     text-align: center;
     background: #fff;
@@ -73,14 +80,6 @@
     border: none;
     box-shadow: inset rgba(0, 0, 0, 0.55) 0.1em -0.05em 0.1em 0.05em;
     text-decoration: none;
-  }
-  .vcard {
-    margin: auto;
-    max-width: 720px;
-    height: 1.5em;
-  }
-  .vcard .fn.org {
-    display: none;
   }
   .pagebar {
     margin-top: 2.5em;
@@ -112,6 +111,14 @@
   .avatar.brian {
     background: url('../img/pics/brian.jpg') center / contain;
   }
+  .clear-float {
+    float: none;
+    clear: both;
+  }
+  html,
+  body {
+    font-size: 100%;
+  }
   a {
     color: #0033ee;
   }
@@ -124,6 +131,12 @@
   p {
     margin: 1em 2.5em;
     text-indent: 1em;
+  }
+  form,
+  p,
+  ul {
+    line-height: 120%;
+    text-align: left;
   }
   .lg {
     font-size: 160%;
@@ -278,18 +291,18 @@
   }
   .icon {
     display: inline-block;
-    width: 46px;
-    height: 46px;
+    width: 30px;
+    height: 30px;
     border: none;
     outline: none;
   }
-  .icon.xsm {
+  .icon.sm {
     height: 22px;
     width: 22px;
   }
-  .icon.sm {
-    height: 30px;
-    width: 30px;
+  .icon.lg {
+    height: 46px;
+    width: 46px;
   }
   .icon.hot {
     background: url('../img/hot.png') center / auto 100% no-repeat;
@@ -297,19 +310,25 @@
   li .icon {
     margin-bottom: -2%;
   }
-  /* display | like
-     stuff | this */
+  /*
+        |
+display | like
+  stuff | this
+        |
+*/
+  .tree > * {
+    vertical-align: middle;
+  }
   .tree > .tree-left {
     display: inline-block;
-    margin-right: 3px;
-    padding-right: 4px;
+    margin-right: 5px;
+    padding-right: 6px;
     border-right: 2px solid #aaa;
     text-align: right;
   }
   .tree > .tree-right {
     display: inline-block;
     text-align: left;
-    vertical-align: top;
   }
   .icon.social {
     vertical-align: bottom;
@@ -413,7 +432,7 @@
     vertical-align: bottom;
   }
   .tile.resi {
-    background-color: #66add1;
+    background-color: #66bed1;
   }
   .tile.sbs {
     background-color: #a3c6e0;
@@ -504,19 +523,33 @@
   }
 }
 @media screen and (max-width: 640px) {
-  .tile {
-    min-width: 98%;
-    margin: 0.5em auto;
-  }
-  .vcard {
+  .viewport > header > .vcard {
     display: inline-flex;
+    height: 4em;
+  }
+  .viewport > header > .vcard big,
+  .viewport > header > .vcard small {
+    font-size: initial !important;
+  }
+  .viewport > footer {
+    margin: auto;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    font-size: 120%;
   }
   .tree > .tree-left {
+    margin-right: 0;
+    padding-right: 0;
     border-right: none;
   }
   .content > h1:first-of-type {
     margin-top: 0;
     text-align: left;
+  }
+  .tile {
+    min-width: 98%;
+    margin: 0.5em auto;
   }
   .no-mobile {
     display: none;
@@ -533,9 +566,5 @@
     color: #0133ee;
     font-size: 200%;
     text-shadow: 0px 0px 1px #ffffff, 1px 1px 1px #e6e6e6, -1px -1px 2px #888888;
-  }
-  .viewport-footer {
-    text-align: center;
-    font-size: 120%;
   }
 }

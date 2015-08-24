@@ -54,6 +54,7 @@ html(lang="en")
     #loading-overlay.loading-overlay.animated.fadeIn
       .loading.animated.fadeInDown
         i.fa.fa-spinner.fa-pulse
+        | &nbsp;
         label(for="loading-overlay") Loading... please wait
     #viewport.viewport
       header#viewport-header.animated
@@ -75,18 +76,20 @@ html(lang="en")
               abbr.country-name(itemprop="addressCountry" title="United States of America") US
           span.tree.pull-right
             span.tree-left
-              <a href="#" title="Store hours" class="pull-left"><i class="fa fa-clock-o fa-fw i-mobile"></i></a>
-              span.no-mobile(itemprop="openingHours" content="Mo-Fr 9:00-20:00") <em>Mon-Fri:</em> 9a-8p
-              .no-mobile(itemprop="openingHours" content="Sa 11:00-17:00") <em>Sat:</em> 11a-5p
-            span.tree-right
+              big
+                a(href="tel:7723618585" title="Reach us by phone")
+                  i.fa.fa-phone.fa-fw.i-mobile
+                strong.tel.no-mobile(itemprop="telephone")
+                  | (<span class="value">772)</span> <span class="value">361</span>-<span class="value">8585</span>
+              br.no-mobile
               a.email(itemprop="email" href="mailto:office@jetcomputers.us" title="Email us")
                 i.fa.fa-envelope.fa-fw.i-mobile
-                span.no-mobile office@jetcomputers.us
-              br.no-mobile
-              a(href="tel:7723618585" title="Reach us by phone")
-                i.fa.fa-phone.fa-fw.i-mobile
-              span.tel.no-mobile(itemprop="telephone")
-                | (<span class="value">772) <span class="value">361-<span class="value">8585</span>
+                span.no-mobile: small office@jetcomputers.us
+            span.tree-right
+              a.pull-left(href="#" title="Store hours")
+                i.fa.fa-clock-o.fa-fw.i-mobile(style="padding-bottom: 100%;")
+              span.no-mobile(itemprop="openingHours" content="Mo-Fr 9:00-20:00") &nbsp;<em>Mon-Fri:</em> 9a-8p
+              .no-mobile(itemprop="openingHours" content="Sa 11:00-17:00") &nbsp;<em>Sat:</em> 11a-5p
       #content-wrapper
       footer#viewport-footer.animated
         #social
@@ -112,7 +115,7 @@ html(lang="en")
               | Services<br>
               | For You
           .pricing.tile.animated.flipInX.flipInTop
-            .gallery.autoplay.items-5.pull-right
+            .gallery.autoplay.items-6.pull-right
               .control-operator(id="home/pricing-tuneup")
               .control-operator(id="home/pricing-antimalware")
               .control-operator(id="home/pricing-transfer")
@@ -143,7 +146,9 @@ html(lang="en")
                     strong $59<sup><small>.99</small></sup>
               figure#restoration.item(data-layzr="img/specials/restoration.jpg" data-layzr-bg)
                 div
-                  .xlg Complete Restoration
+                  .xlg
+                    | Complete<br>
+                    | Restoration
                   .xxl
                     strong $79<sup><small>.99</small></sup>
               figure#housecall.item(data-layzr="img/specials/housecall.jpg" data-layzr-bg)
@@ -185,40 +190,40 @@ html(lang="en")
             p
               | Jet Computers is here to take care of all your technical needs.
               | We can assist you with everything from PCs to mobile phones, with services including:
-              ul.fa-ul
-                li
-                  i.fa.fa-li.fa-tachometer
-                  | Cleaning and tune-up
-                li
-                  i.fa.fa-li.fa-medkit
-                  | Virus and malware removal
-                  i.icon.hot.xsm(title="Popular service!")
-                li
-                  i.fa.fa-li.fa-lock
-                  | Computer security
-                li
-                  i.fa.fa-li.fa-bug
-                  | Troubleshooting
-                li
-                  i.fa.fa-li.fa-download
-                  | System and app installation
-                li
-                  i.fa.fa-li.fa-exchange
-                  | Files and settings transfer
-                li
-                  i.fa.fa-li.fa-life-ring
-                  | Failure prevention and recovery
-                li
-                  i.fa.fa-li.fa-magic
-                  | Complete system restoration
-                  i.icon.hot.xsm(title="Popular service!")
-                li
-                  i.fa.fa-li.fa-bolt
-                  | Performance upgrades
-                li
-                  i.fa.fa-li.fa-question
-                  | Need something else? Just ask!
-                aside: small: em (We are not a screen repair shop, sorry!)
+            ul.fa-ul.pull-left
+              li
+                i.fa.fa-li.fa-tachometer
+                | Cleaning and tune-up
+              li
+                i.fa.fa-li.fa-medkit
+                | Virus and malware removal
+                i.icon.hot.sm(title="Popular service!")
+              li
+                i.fa.fa-li.fa-lock
+                | Computer security
+              li
+                i.fa.fa-li.fa-bug
+                | Troubleshooting
+              li
+                i.fa.fa-li.fa-download
+                | System and app installation
+              li
+                i.fa.fa-li.fa-exchange
+                | Files and settings transfer
+              li
+                i.fa.fa-li.fa-life-ring
+                | Failure prevention and recovery
+              li
+                i.fa.fa-li.fa-magic
+                | Complete system restoration
+                i.icon.hot.sm(title="Popular service!")
+              li
+                i.fa.fa-li.fa-bolt
+                | Performance upgrades
+              li
+                i.fa.fa-li.fa-question
+                | Need something else? Just ask!
+              aside: small: em (We do not repair phone/tablet screens at this time!)
             p
               | When you entrust Jet Computers with your gadgets &mdash; be it
               | your notebook or tablet, gaming rig or HTPC &mdash; you can rest
@@ -229,6 +234,8 @@ html(lang="en")
               | the unforeseen. Our specialized in-house tools enable us to work
               | smarter and faster, saving you money and getting you back up and
               | running.
+            br
+            br.clear-float
             big: em Questions? Just call 772-361-8585!<br>
             small: em - or -<br>
             em Visit <a href="#map">our shop in Port St Lucie</a>!

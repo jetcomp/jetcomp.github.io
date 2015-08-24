@@ -4,8 +4,9 @@ html(lang="en")
     meta(charset="utf-8")
     title Request a Consultation - Jet Computers
     meta(http-equiv="Content-Language" content="en")
-    script(src="https://services.cognitoforms.com/s/jsSC-dHFKUKD5CvhZoaBYw")
   body
     .cognito
+      .cognito.c-forms-confirmation Please wait while the form loads...
+      script(src="https://services.cognitoforms.com/s/jsSC-dHFKUKD5CvhZoaBYw")
       script.
         Cognito.load("forms", { id: "1" });

@@ -5,15 +5,13 @@ html {
   background-color: #fff;
 }
 
-ul {
-  display: inline-block;
+h1 {
+  margin-top: 0;
 }
 
-form,
-p,
 ul {
-  line-height: 125%;
-  text-align: left;
+  display: inline-block;
+  padding: 9px;
 }
 
 iframe {
@@ -37,6 +35,15 @@ iframe {
         max-width: 100%;
       }
     }
+
+    & > .vcard {
+      margin: auto;
+      max-width: 720px;
+      height: 2.5em;
+      padding: 12px 0 7px;
+
+      & .fn.org { display: none; }
+    }
   }
 
   & > footer {
@@ -55,7 +62,7 @@ iframe {
   & > .content {
     margin: auto;
     max-width: 1200px;
-    padding: 1.5em;
+    padding: 1.5em 1.5em 2em;
     position: relative;
     text-align: center;
     background: #fff;
@@ -86,14 +93,6 @@ iframe {
   border: none;
   box-shadow: inset rgba(0, 0, 0, 0.55) 0.1em -0.05em 0.1em 0.05em;
   text-decoration: none;
-}
-
-.vcard {
-  margin: auto;
-  max-width: 720px;
-  height: 1.5em;
-
-  & .fn.org { display: none; }
 }
 
 .pagebar {
@@ -130,4 +129,8 @@ iframe {
     background: url('../img/pics/brian.jpg') center/contain;
   }
 }
- 
+
+.clear-float {
+  float: none;
+  clear: both;
+}

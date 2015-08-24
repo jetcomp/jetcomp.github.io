@@ -1,10 +1,18 @@
-/* display | like
-     stuff | this */
+/*
+        |
+display | like
+  stuff | this
+        |
+*/
 .tree {
+  & > * {
+    vertical-align: middle;
+  }
+
   & > .tree-left {
     display: inline-block;
-    margin-right: 3px;
-    padding-right: 4px;
+    margin-right: 5px;
+    padding-right: 6px;
     border-right: 2px solid #aaa;
     text-align: right;
   }
@@ -12,6 +20,5 @@
   & > .tree-right {
     display: inline-block;
     text-align: left;
-    vertical-align: top;
   }
 }

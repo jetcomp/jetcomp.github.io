@@ -2,20 +2,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jade: {
+      options: {
+        pretty: true
+      },
       build: {
         files: {
           'index.html': 'src/pages/index.jade',
           'twitter.html': 'src/pages/twitter.jade',
           'consultation.html': 'src/pages/consultation.jade'
-        }
-      }
-    },
-    htmlmin: {
-      build: {
-        files: {
-          'index.html': 'index.html',
-          'twitter.html': 'twitter.html',
-          'consultation.html': 'consultaiton.html'
         }
       }
     },
@@ -35,17 +29,6 @@ module.exports = function(grunt) {
         ]
       }
     },
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
-        files: {
-          'js/main.min.js': 'js/main.js',
-          'js/vendor.min.js': 'js/vendor.js'
-        }
-      }
-    },
     less: {
       style: {
         options: {
@@ -53,14 +36,6 @@ module.exports = function(grunt) {
         },
         files: {
           'css/main.css': 'src/styles/main.less'
-        }
-      }
-    },
-    cssmin: {
-      build: {
-        files: {
-          'css/main.min.css': 'css/main.css',
-          'css/vendor.min.css': 'css/vendor.css'
         }
       }
     },
@@ -117,11 +92,11 @@ module.exports = function(grunt) {
     watch: {
       gruntfile: {
         files: 'Gruntfile.js',
-        tasks: ['build', 'bump', 'watch']
+        tasks: ['bump', 'watch']
       },
       vendor: {
         files: ['bower_components/**/*'],
-        tasks: ['bower_concat', 'uglify', 'cssmin', 'copy', 'bump'],
+        tasks: ['bower_concat', 'copy', 'bump'],
         options: {
           livereload: true
         }
@@ -135,14 +110,14 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ['src/scripts/**/*.js', '!src/scripts/**/*.min.js'],
-        tasks: ['copy:main', 'uglify', 'bump'],
+        tasks: ['copy:main', 'bump'],
         options: {
           livereload: true
         }
       },
       styles: {
         files: ['src/styles/**/*.less'],
-        tasks: ['less', 'cssmin', 'bump'],
+        tasks: ['less', 'bump'],
         options: {
           livereload: true
         }
@@ -155,16 +130,13 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-bower-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('build', ['copy', 'jade', 'htmlmin', 'bower_concat', 'uglify', 'less', 'cssmin']);
+  grunt.registerTask('build', ['copy', 'jade', 'bower_concat', 'less']);
   grunt.registerTask('default', ['build']);
 };

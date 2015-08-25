@@ -5,7 +5,7 @@ html(lang="en")
     title Tweets by @JetCompPSL - Jet Computers
     meta(http-equiv="Content-Language" content="en")
     style.
-      body { margin: 0; padding: 2px; }
+      body { margin: 0; padding: 2px; overflow: hidden; }
   body
     .twitter-timeline(data-dnt="true" data-widget-id="633360408112267264" data-chrome="nofooter")
       script.
@@ -18,11 +18,9 @@ html(lang="en")
           js.id = id;
           js.src = "//platform.twitter.com/widgets.js";
           fjs.parentNode.insertBefore(js, fjs);
-         
           t._e = [];
           t.ready = function(f) {
             t._e.push(f);
           };
-         
           return t;
         }(document, "script", "twitter-wjs"));

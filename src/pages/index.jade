@@ -58,8 +58,7 @@ html(lang="en")
         label(for="loading-overlay") Loading... please wait
     #viewport.viewport
       header#viewport-header.animated
-        a(href="#home")
-          img.logo(itemprop="logo" src="img/blank.png" data-layzr="img/brand/ph.png" alt="Jet Computers logo")
+        h1: a(href="#home"): img.logo(itemprop="logo" src="img/blank.png" data-layzr="img/brand/ph.png" alt="Jet Computers logo")
         #vcard.vcard
           span.pull-left
             .fn.org(itemprop="name")
@@ -80,7 +79,7 @@ html(lang="en")
                 a(href="tel:7723618585" title="Reach us by phone")
                   i.fa.fa-phone.fa-fw.i-mobile
                 strong.tel.no-mobile(itemprop="telephone")
-                  | (<span class="value">772)</span> <span class="value">361</span>-<span class="value">8585</span>
+                  | (<span class="value">772</span>) <span class="value">361</span>-<span class="value">8585</span>
               br.no-mobile
               a.email(itemprop="email" href="mailto:office@jetcomputers.us" title="Email us")
                 i.fa.fa-envelope.fa-fw.i-mobile
@@ -108,9 +107,9 @@ html(lang="en")
     #page-stack.page-stack
       #home.home.page.animated.zoomIn
         nav.content
-          a.resi.navlink.tile.animated.flipInY.flipInLeft(href="#resi")
-            img.bg(src="img/blank.png" data-layzr="img/bg/resi.jpg")
-            img.special-badge.pull-right(src="img/blank.png" data-layzr="img/tuneup_badge.png")
+          a.residential.navlink.tile.animated.flipInY.flipInLeft(href="#residential")
+            img.bg(src="img/blank.png" data-layzr="img/bg/residential.jpg" alt="Residential Services")
+            img.special-badge.pull-right(src="img/blank.png" data-layzr="img/tuneup_badge.png" alt="$39.99 Cleaning &amp; Tune-Up!")
             label
               | Services<br>
               | For You
@@ -164,8 +163,8 @@ html(lang="en")
                 a.control-button(href="#home/pricing-transfer") &bull;
                 a.control-button(href="#home/pricing-restoration") &bull;
                 a.control-button(href="#home/pricing-housecall") &bull;
-          a.sbs.navlink.tile.animated.flipInX.flipInTop(href="#sbs")
-            img.bg(src="img/blank.png" data-layzr="img/bg/sbs.jpg")
+          a.business.navlink.tile.animated.flipInX.flipInTop(href="#business")
+            img.bg(src="img/blank.png" data-layzr="img/bg/business.jpg" alt="Small Business Services")
             label
               | Small<br>
               | Business<br>
@@ -173,12 +172,12 @@ html(lang="en")
           a.twitter.navlink.tile.animated.fadeIn(href="https://twitter.com/JetCompPSL" target="_blank")
             iframe(data-layzr="twitter.html" style="width: 100%; height: 100%;")
             label(style="z-index: -1;")
-              | @JetCompPSL<br>
+              | <small>@JetCompPSL</small><br>
               | on Twitter
-      section#resi.page.animated.fadeInRight
+      section#residential.page.animated
         article.content
-          button.backbtn(style="background-color: #66add1") &nbsp;
-          h1 Residential Services
+          button.back-button(style="background-color: #66add1") &nbsp;
+          h2 Residential Services
           div
             p
               | Technology is changing our lives, but it doesn't have to cause
@@ -196,7 +195,7 @@ html(lang="en")
                 | Cleaning and tune-up
               li
                 i.fa.fa-li.fa-medkit
-                | Virus and malware removal
+                | Virus and malware removal 
                 i.icon.hot.sm(title="Popular service!")
               li
                 i.fa.fa-li.fa-lock
@@ -215,7 +214,7 @@ html(lang="en")
                 | Failure prevention and recovery
               li
                 i.fa.fa-li.fa-magic
-                | Complete system restoration
+                | Complete system restoration 
                 i.icon.hot.sm(title="Popular service!")
               li
                 i.fa.fa-li.fa-bolt
@@ -223,13 +222,13 @@ html(lang="en")
               li
                 i.fa.fa-li.fa-question
                 | Need something else? Just ask!
-              aside: small: em (We do not repair phone/tablet screens at this time!)
+              aside: small: em (We do not repair phone/tablet screens at this time)
             p
               | When you entrust Jet Computers with your gadgets &mdash; be it
               | your notebook or tablet, gaming rig or HTPC &mdash; you can rest
               | assured that expert hands are taking the utmost care to see the
               | job through properly. We are up to speed on all the latest
-              | diagnosis and repair techniques, and we begin each procedure
+              | diagnosis and repair techniques, and we begin any delicate procedure
               | with a full backup of each device to protect your data against
               | the unforeseen. Our specialized in-house tools enable us to work
               | smarter and faster, saving you money and getting you back up and
@@ -239,10 +238,10 @@ html(lang="en")
             big: em Questions? Just call 772-361-8585!<br>
             small: em - or -<br>
             em Visit <a href="#map">our shop in Port St Lucie</a>!
-      section#sbs.page.animated.fadeInRight
+      section#business.page.animated
         article.content
-          button.backbtn(style="background-color: #a3c6e0") &nbsp;
-          h1 Small Business Services
+          button.back-button(style="background-color: #a3c6e0") &nbsp;
+          h2 Small Business Services
           div
             p
               | Every small business has IT needs these days, but it's not
@@ -256,11 +255,12 @@ html(lang="en")
               | To request a no-obligation consultation, simply give us a call,
               | send us an email, or fill out the short form below.
             iframe.cognito(data-layzr="consultation.html" onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px';")
-      section#map.page.animated.fadeInRight
+      section#map.page.animated
         .content
-          button.backbtn(style="background-color: #fff") &nbsp;
+          button.back-button(style="background-color: #fff") &nbsp;
+          h2 Come Find Us!
           iframe(data-layzr="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMjHrzxczLo9bL4HWAx5f60a1mqzIAL2s&q=Jet Computers, Port St Lucie, FL 34953" allowfullscreen style="width: 100%; height: 600px; padding: 0; border: 0;" onload="this.style.height = $('#viewport').innerHTML + 'px';")
       section#404.page.animated.fadeInDown
         .content
-          button.backbtn(style="background-color: #fff") &nbsp;
+          button.back-button(style="background-color: #fff") &nbsp;
           | Not found

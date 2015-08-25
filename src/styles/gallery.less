@@ -8,10 +8,6 @@
     background-size: cover;
     background-position: center;
 
-    &:first-of-type {
-      position: absolute;
-    }
-
     & > div {
       margin: auto;
       min-width: 75%;
@@ -21,4 +17,15 @@
       background: rgba(255, 255, 255, 0.7);
     }
   }
+}
+
+// 6th item hack :3
+.gallery .control-operator:nth-of-type(6):target~.item:nth-of-type(6) {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.gallery .control-operator:nth-of-type(6):target~.controls .control-button:nth-of-type(6) {
+    color: #fff;
+    color: rgba(255,255,255,.8);
 }

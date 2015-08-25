@@ -173,7 +173,7 @@ $(document).ready(function() {
     _dbg('hover') && console.log(_ts(), 'hover', location.hash, this.hash);
     setBackground(this.hash.substring(1));
   }, function() {
-    (location.hash == '' || location.hash == '#' || location.hash == '#home' ||
+    (location.hash == '' || location.hash == '#' || location.hash.indexOf('#home') == 0 ||
       // map hover is a special case
       (location.hash != '#map' && this.hash == '#map')
     ) && setBackground();
@@ -186,15 +186,15 @@ $(document).ready(function() {
     _starttime = new Date().getTime();
     _dbg('clockReset') && console.log(_ts(), 'clockReset');
 
-    // home exits left instead of right
-    changePage(newPage, newPage == 'home' ? 3 : 1);
+    // home exits right instead of left
+    changePage(newPage, newPage == 'home' ? 1 : 3);
 
     // prevent jump
     setTimeout(function() { window.scrollTo(0, 0); }, 1);
   });
 
   // inter-page nav
-  $('.backbtn').click(function(e) {
+  $('.back-button').click(function(e) {
     e.preventDefault();
 
     _dbg('goBackOrHome') && console.log(_ts(), 'goBackOrHome', '[ ' + curPage + ' != ' + lastPage + ' ]');

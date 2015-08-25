@@ -6,6 +6,9 @@
     background-color: #fff;
   }
   h1 {
+    margin-bottom: 0;
+  }
+  h2 {
     margin-top: 0;
   }
   ul {
@@ -21,12 +24,12 @@
     max-width: 960px;
     text-align: center;
   }
-  .viewport > header > a {
+  .viewport > header > h1 {
     display: inline-block;
     max-width: 540px;
     text-align: center;
   }
-  .viewport > header > a > .logo {
+  .viewport > header > h1 .logo {
     width: 800px;
     max-width: 100%;
   }
@@ -59,6 +62,17 @@
     background: #fff;
     box-shadow: #333 0 0 0.2em 0.1em;
   }
+  .page > .content > .back-button {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../img/back.png') center / cover no-repeat;
+    border: none;
+    box-shadow: inset rgba(0, 0, 0, 0.55) -0.1em -0.05em 0.1em 0.05em;
+    text-decoration: none;
+  }
   .page.home > .content {
     padding: initial;
     background: initial;
@@ -69,17 +83,6 @@
     position: absolute;
     top: -15%;
     right: -15%;
-  }
-  .backbtn {
-    width: 64px;
-    height: 64px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: url('../img/back.png') center / cover no-repeat;
-    border: none;
-    box-shadow: inset rgba(0, 0, 0, 0.55) 0.1em -0.05em 0.1em 0.05em;
-    text-decoration: none;
   }
   .pagebar {
     margin-top: 2.5em;
@@ -291,24 +294,24 @@
   }
   .icon {
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border: none;
     outline: none;
   }
   .icon.sm {
-    height: 22px;
-    width: 22px;
+    height: 18px;
+    width: 18px;
   }
   .icon.lg {
-    height: 46px;
-    width: 46px;
+    height: 40px;
+    width: 40px;
   }
   .icon.hot {
     background: url('../img/hot.png') center / auto 100% no-repeat;
   }
   li .icon {
-    margin-bottom: -2%;
+    margin-bottom: -1%;
   }
   /*
         |
@@ -431,10 +434,10 @@ display | like
     position: relative;
     vertical-align: bottom;
   }
-  .tile.resi {
+  .tile.residential {
     background-color: #66bed1;
   }
-  .tile.sbs {
+  .tile.business {
     background-color: #a3c6e0;
   }
   .tile.pricing > .gallery {
@@ -474,9 +477,6 @@ display | like
     background-size: cover;
     background-position: center;
   }
-  .gallery > .item:first-of-type {
-    position: absolute;
-  }
   .gallery > .item > div {
     margin: auto;
     min-width: 75%;
@@ -484,6 +484,14 @@ display | like
     color: #000;
     text-shadow: none;
     background: rgba(255, 255, 255, 0.7);
+  }
+  .gallery .control-operator:nth-of-type(6):target ~ .item:nth-of-type(6) {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  .gallery .control-operator:nth-of-type(6):target ~ .controls .control-button:nth-of-type(6) {
+    color: #fff;
+    color: rgba(255, 255, 255, 0.8);
   }
   .cognito {
     margin: auto;
@@ -544,8 +552,7 @@ display | like
     border-right: none;
   }
   .content > h1:first-of-type {
-    margin-top: 0;
-    text-align: left;
+    text-align: right;
   }
   .tile {
     min-width: 98%;

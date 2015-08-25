@@ -6,6 +6,10 @@ html {
 }
 
 h1 {
+  margin-bottom: 0;
+}
+
+h2 {
   margin-top: 0;
 }
 
@@ -25,12 +29,12 @@ iframe {
     max-width: 960px;
     text-align: center;
 
-    & > a {
+    & > h1 {
       display: inline-block;
       max-width: 540px;
       text-align: center;
 
-      & > .logo {
+      & .logo {
         width: 800px;
         max-width: 100%;
       }
@@ -67,6 +71,18 @@ iframe {
     text-align: center;
     background: #fff;
     box-shadow: #333 0 0 0.2em 0.1em;
+
+    & > .back-button {
+      width: 64px;
+      height: 64px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('../img/back.png') center/cover no-repeat;
+      border: none;
+      box-shadow: inset rgba(0, 0, 0, 0.55) -0.1em -0.05em 0.1em 0.05em;
+      text-decoration: none;
+    }
   }
 
   &.home > .content {
@@ -81,18 +97,6 @@ iframe {
   position: absolute;
   top: -15%;
   right: -15%;
-}
-
-.backbtn {
-  width: 64px;
-  height: 64px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: url('../img/back.png') center/cover no-repeat;
-  border: none;
-  box-shadow: inset rgba(0, 0, 0, 0.55) 0.1em -0.05em 0.1em 0.05em;
-  text-decoration: none;
 }
 
 .pagebar {

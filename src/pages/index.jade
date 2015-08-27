@@ -79,12 +79,6 @@ html(lang="en")
     #page-stack.page-stack
       #home.home.page.animated.zoomIn
         nav.content
-          a.residential.navlink.tile.animated.flipInY.flipInLeft(href="#residential")
-            img.bg(src="img/blank.png" data-layzr="img/bg/residential.jpg" alt="Residential Services")
-            img.special-badge.pull-right(src="img/blank.png" data-layzr="img/tuneup_badge.png" alt="$39.99 Cleaning &amp; Tune-Up!")
-            label
-              | Services<br>
-              | For You
           .pricing.tile.animated.flipInX.flipInTop
             .gallery.autoplay.items-6.pull-right
               .control-operator(id="home/pricing-diagnostic")
@@ -155,6 +149,12 @@ html(lang="en")
                 a.control-button(href="#home/pricing-transfer") &bull;
                 a.control-button(href="#home/pricing-restoration") &bull;
                 a.control-button(href="#home/pricing-housecall") &bull;
+          a.residential.navlink.tile.animated.flipInY.flipInLeft(href="#residential")
+            img.bg(src="img/blank.png" data-layzr="img/bg/residential.jpg" alt="Residential Services")
+            img.special-badge.pull-right(src="img/blank.png" data-layzr="img/tuneup_badge.png" alt="$39.99 Cleaning &amp; Tune-Up!")
+            label
+              | Services<br>
+              | For You
           a.business.navlink.tile.animated.flipInX.flipInTop(href="#business")
             img.bg(src="img/blank.png" data-layzr="img/bg/business.jpg" alt="Small Business Services")
             label

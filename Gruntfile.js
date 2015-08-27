@@ -85,14 +85,9 @@ module.exports = function(grunt) {
     },
     bump: {
       options: {
-        files: ['package.json'],
-        updateConfigs: [],
         commit: false,
         createTag: false,
-        push: false,
-        globalReplace: false,
-        prereleaseName: false,
-        regExp: false
+        push: false
       }
     },
     watch: {
@@ -108,8 +103,15 @@ module.exports = function(grunt) {
         }
       },
       pages: {
-        files: ['src/pages/**/*.jade'],
+        files: ['src/pages/**/*.jade', '!src/pages/includes/base.jade'],
         tasks: ['jade', 'bump'],
+        options: {
+          livereload: true
+        }
+      },
+      base: {
+        files: ['src/pages/includes/base.jade'],
+        tasks: ['jade'],
         options: {
           livereload: true
         }

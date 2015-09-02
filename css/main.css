@@ -47,9 +47,10 @@ iframe {
   display: none;
 }
 .viewport > footer {
+  width: 100%;
   visibility: hidden;
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
 }
 .viewport > footer > .social-links {
   position: relative;
@@ -58,6 +59,11 @@ iframe {
 .viewport > footer > .copy-text {
   padding: 13px;
   border-top-right-radius: 1em;
+}
+.viewport > footer > img {
+  margin-right: 22px;
+  float: right;
+  vertical-align: top;
 }
 .page {
   margin: 1em 0 70px;

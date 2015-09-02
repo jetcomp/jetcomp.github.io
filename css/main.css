@@ -47,7 +47,7 @@ iframe {
   display: none;
 }
 .viewport > footer {
-  visibility: visible;
+  visibility: hidden;
   position: fixed;
   bottom: 10px;
 }
@@ -594,14 +594,6 @@ display | like
     color: #000;
     text-shadow: none;
     background: rgba(255, 255, 255, 0.7);
-  }
-  .gallery .control-operator:nth-of-type(6):target ~ .item:nth-of-type(6) {
-    pointer-events: auto;
-    opacity: 1;
-  }
-  .gallery .control-operator:nth-of-type(6):target ~ .controls .control-button:nth-of-type(6) {
-    color: #fff;
-    color: rgba(255, 255, 255, 0.8);
   }
   .cognito {
     margin: auto;

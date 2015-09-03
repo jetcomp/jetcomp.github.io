@@ -5,17 +5,31 @@
   }
 }
 
-// small displays
+// smaller displays
 @media (max-width: 1280px) {
-  .slidez .viewport { padding-right: 5px; padding-left: 5px; }
+  .slidez .viewport {
+    padding: 0 5px;
+  }
+}
+
+// small displays
+@media (max-width: 960px) {
+  .tile {
+    max-width: 290px;
+  }
 }
 
 // extra-small displays
 @media (max-width: 800px) {
-  .vcard > .pull-left {
-    display: block;
-    text-align: left;
-    float: none;
+  .viewport {
+    & > header {
+      & > .vcard {
+        & > div {
+          margin: auto;
+          padding: 0;
+        }
+      }
+    }
   }
 
   .tile {
@@ -39,9 +53,18 @@
 @media (max-width: 640px) {
   .viewport {
     & > header {
+      margin-bottom: 5em;
+      position: relative;
+
       & > .vcard {
         display: inline-flex;
-        height: 4em;
+        margin: 0.5em auto 4em;
+        padding: 0;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: center;
 
         & big,
         & small, {
@@ -53,10 +76,29 @@
 
     & > footer {
       margin: auto;
+      height: initial;
       padding: 0;
-      position: relative;
+      position: static;
       text-align: center;
       font-size: 120%;
+
+      & > * {
+        display: block;
+        position: static;
+      }
+
+      & > .social-links {
+        margin: 20px 0 0;
+      }
+
+      & > .payment-badge {
+        margin: 15px auto;
+      }
+
+      & > .copy-text {
+        background: initial;
+        box-shadow: initial;
+      }
     }
   }
 
@@ -76,6 +118,10 @@
     margin: 0.5em auto;
   }
 
+  .page {
+    margin-bottom: 0;
+  }
+
   // helpers
   .no-mobile {
     display: none;
@@ -90,6 +136,7 @@
     box-sizing: border-box !important;
     box-shadow: #000 0 0 0.08em 0.03em !important;
     background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.35);
     color: #0133ee;
     font-size: 200%;
     text-shadow: 0px 0px 1px #fff, 1px 1px 1px #e6e6e6, -1px -1px 2px #888;

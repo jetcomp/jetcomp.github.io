@@ -57,25 +57,33 @@ iframe {
   }
 
   & > footer {
+    margin-top: 20px;
     width: 100%;
+    // don't obstruct clicks
+    height: 0;
     visibility: hidden;
     position: fixed;
     bottom: 0;
 
-    & > .social-links {
+    & > * {
       position: relative;
+      bottom: 70px;
+    }
+
+    & > .social-links {
       left: 10px;
+      z-index: 1;
+    }
+
+    & > .payment-badge {
+      margin: 0 22px 0 0;
+      float: right;
+      vertical-align: top;
     }
 
     & > .copy-text {
       padding: 13px;
       border-top-right-radius: 1em;
-    }
-
-    & > img {
-      margin-right: 22px;
-      float: right;
-      vertical-align: top;
     }
   }
 }

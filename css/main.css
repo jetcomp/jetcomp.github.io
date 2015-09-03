@@ -196,6 +196,7 @@ iframe {
 }
 .viewport > footer > .payment-badge {
   margin: 0 26px 0 0;
+  height: 32px;
   float: right;
   vertical-align: top;
 }
@@ -223,7 +224,7 @@ iframe {
   position: absolute;
   top: 0;
   left: 0;
-  background: url('../img/back.png') center / cover no-repeat;
+  background: #ffffff url('../img/back.png') center / cover no-repeat;
   border: none;
   box-shadow: inset rgba(0, 0, 0, 0.55) -0.1em -0.05em 0.1em 0.05em;
   text-decoration: none;

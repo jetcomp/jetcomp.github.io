@@ -609,10 +609,11 @@ display | like
     position: static;
   }
   .viewport > footer > .social-links {
-    margin: 20px 0 0;
+    margin: 20px 0.18em 0 0;
   }
   .viewport > footer > .payment-badge {
     margin: 15px auto;
+    float: none;
   }
   .viewport > footer > .copy-text {
     background: initial;
@@ -637,13 +638,13 @@ display | like
     display: none;
   }
   .i-mobile {
-    display: inline-block !important;
+    display: inline-block;
     margin: 0 0 0.18em 0.18em !important;
     width: 64px;
     height: 64px;
     padding: 17px 0 !important;
-    box-sizing: border-box !important;
-    box-shadow: #000 0 0 0.08em 0.03em !important;
+    box-sizing: border-box;
+    box-shadow: #000 0 0 0.08em 0.03em;
     background-color: #fff;
     background-color: rgba(255, 255, 255, 0.35);
     color: #0133ee;

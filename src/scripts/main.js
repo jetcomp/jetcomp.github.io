@@ -181,16 +181,18 @@ $(document).ready(function() {
 
   $(window).on('hashchange', function(e) {
     var newPage = curNav() || 'home';
+    _dbg('nav') && console.log(_ts(), 'nav', curPage + ' -> ' + newPage)
 
-    _dbg('nav') && console.log(_ts(), 'nav', curPage + ' -> ' + newPage);
-    _starttime = new Date().getTime();
-    _dbg('clockReset') && console.log(_ts(), 'clockReset');
+    if(curPage != newPage) {
+      _starttime = new Date().getTime();
+      _dbg('clockReset') && console.log(_ts(), 'clockReset');
 
-    // home exits right instead of left
-    changePage(newPage, newPage == 'home' ? 1 : 3);
+      // home exits right instead of left
+      changePage(newPage, newPage == 'home' ? 1 : 3);
 
-    // prevent jump
-    setTimeout(function() { window.scrollTo(0, 0); }, 1);
+      // prevent jump
+      setTimeout(function() { window.scrollTo(0, 0); }, 1);
+    }
   });
 
   // inter-page nav

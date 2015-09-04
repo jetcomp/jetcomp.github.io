@@ -1,12 +1,16 @@
 doctype html
 html(lang="en")
   head
-    meta(charset="utf-8")
-    title Tweets by @JetCompPSL - Jet Computers
-    meta(http-equiv="Content-Language" content="en")
+    //- Pull in common tags
+    include ../includes/mixins.jade
+    +meta('Tweets by @JetCompPSL')
+    include ../includes/base.jade
     style.
       body { margin: 0; padding: 2px; overflow: hidden; }
   body
+    script.
+      //- We're iframe-only
+      if(!window.frameElement) window.location = '';
     .twitter-timeline(data-dnt="true" data-widget-id="633360408112267264" data-chrome="nofooter")
       script.
         window.twttr = (function(d, s, id) {

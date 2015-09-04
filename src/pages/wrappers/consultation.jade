@@ -1,10 +1,14 @@
 doctype html
 html(lang="en")
   head
-    meta(charset="utf-8")
-    title Request a Consultation - Jet Computers
-    meta(http-equiv="Content-Language" content="en")
+    //- Pull in common tags
+    include ../includes/mixins.jade
+    +meta('Request A Consultation)')
+    include ../includes/base.jade
   body
+    script.
+      //- we're iframe-only
+      if(!window.frameElement) window.location = '';
     .cognito
       .cognito.c-forms-confirmation Please wait while the form loads...
       script(src="https://services.cognitoforms.com/s/jsSC-dHFKUKD5CvhZoaBYw")

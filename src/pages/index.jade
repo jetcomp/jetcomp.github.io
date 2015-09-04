@@ -1,38 +1,10 @@
 doctype html
 html(lang="en")
   head
-    meta(charset="utf-8")
-    title Jet Computers
-    meta(http-equiv="Content-Language" content="en")
-    //- base(href="https://jetcomputers.us/" target="_parent")
-    //- Begin search tags
-    meta(name="title" content="Jet Computers - Services for PCs, Macs, Linux, Android, and iOS!")
-    meta(name="description" content="We've got the St Lucie area covered from desktop to smartphone; with expert repair, servicing, custom builds, and much more! Repairs start from just $39.99!")
-    meta(name="keywords" content="computer, computers, computer repair, computer service, computer repairs, computer services, tablet, tablets, tablet repair, tablet service, tablet services, mobile, mobiles, mobile repair, mobile service, mobile repairs, mobile services, mac, macs, mac repair, mac repairs, mac service, mac services, virus, viruses, virus cleaning, virus removal, spyware, spyware cleaning, spyware removal, malware, malware cleaning, malware removal, cleaning, tuneup, removal, installation, windows, osx, linux, unix, freebsd, android, ios")
-    meta(name="subject" content="Computer repair and services")
-    meta(name='revised' content="Sunday, July 25th, 2015, 12:00 am")
-    link(rel="canonical" href="https://jetcomputers.us")
-    link(rel="alternate" href="https://jetcomputers.us" hreflang="x-default")
-    link(rel="publisher" href="https://google.com/+JetComputersPortSaintLucie")
-    meta(name="robots" content="index, follow")
-    //- End search tags
-    //- Begin social tags
-    meta(property="og:title" content="Jet Computers - Services for PCs, Macs, Linux, Android, and iOS!")
-    meta(property="og:type" content="website")
-    meta(property="og:image" content="")
-    meta(property="og:url" content="https://jetcomputers.us")
-    meta(property="og:description" content="We've got the Port St Lucie area covered from desktop to smartphone; with expert repair, servicing, custom builds, and much more! Repairs start from just $39.99!")
-    meta(property="twitter:card" content="summary")
-    meta(property="twitter:url" content="https://jetcomputers.us")
-    meta(property="twitter:title" content="Jet Computers - Services for PCs, Macs, Linux, Android, and iOS!")
-    meta(property="twitter:description" content="We've got the Port St Lucie area covered from desktop to smartphone; with expert repair, servicing, custom builds, and much more! Repairs start from just $39.99!")
-    meta(property="twitter:image" content="")
-    //- End social tags
-    //- Begin mobile tags
-    meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui")
-    meta(name="apple-mobile-web-app-capable" content="yes")
-    link(rel="shortcut icon" href="img/mobile.ico")
-    //- End mobile tags
+    //- Pull in common tags
+    include ./includes/mixins.jade
+    +meta('Home')
+    include ./includes/base.jade
     //- Begin styles
     link(rel="stylesheet" href="css/vendor.min.css")
     link(rel="stylesheet" href="css/main.css")
@@ -115,16 +87,28 @@ html(lang="en")
               | For You
           .pricing.tile.animated.flipInX.flipInTop
             .gallery.autoplay.items-6.pull-right
+              .control-operator(id="home/pricing-diagnostic")
               .control-operator(id="home/pricing-tuneup")
               .control-operator(id="home/pricing-antimalware")
               .control-operator(id="home/pricing-transfer")
               .control-operator(id="home/pricing-restoration")
               .control-operator(id="home/pricing-housecall")
+              figure#diagnostic.item(data-layzr="img/specials/diagnostic.jpg" data-layzr-bg)
+                div
+                  .xxl
+                    strong FREE
+                  .xlg
+                    | Same-Day<br>
+                    | Diagnostics
+                  small
+                    | (Offer ends 09/15/2015)
               figure#tuneup.item(data-layzr="img/specials/tuneup.jpg" data-layzr-bg)
                 div
                   .xlg
                     | Cleaning and<br>
                     | Tune-Up
+                  div
+                    | Work and play faster than ever without breaking the bank!
                   .xxl
                     strong $39<sup><small>.99</small></sup>
               figure#antimalware.item(data-layzr="img/specials/antimalware.jpg" data-layzr-bg)
@@ -132,15 +116,19 @@ html(lang="en")
                   .xlg
                     | Virus and<br>
                     | Malware Removal
-                  small <em>Starting from:</em>
+                  div
+                    | A deeper cleaning to eradicate even the most vicious infections.
+                  small: em Starting from:
                   .xxl
-                    strong $49<sup><small>.99</small></sup>
+                    strong $59<sup><small>.99</small></sup>
               figure#transfer.item(data-layzr="img/specials/transfer.jpg" data-layzr-bg)
                 div
                   .xlg
                     | Files and Settings<br>
                     | Transfer
-                  small <em>Starting from:</em>
+                  div
+                    | From email to Quickbooks and beyond, we'll make sure you don't lose a single byte!
+                  small: em Starting from:
                   .xxl
                     strong $59<sup><small>.99</small></sup>
               figure#restoration.item(data-layzr="img/specials/restoration.jpg" data-layzr-bg)
@@ -148,6 +136,8 @@ html(lang="en")
                   .xlg
                     | Complete<br>
                     | Restoration
+                  div
+                    | Let us get you back up and running &ndash; with no reinstallation or nasty surprises.
                   .xxl
                     strong $79<sup><small>.99</small></sup>
               figure#housecall.item(data-layzr="img/specials/housecall.jpg" data-layzr-bg)
@@ -155,9 +145,11 @@ html(lang="en")
                   .xlg
                     | Need Us To Come<br>
                     | To You?
+                  div Whether at your home or workplace, if you're in St Lucie or Martin county, we'll be there.
                   .lg
                     strong Call for a quote
               .controls
+                a.control-button(href="#home/pricing-diagnostic") &bull;
                 a.control-button(href="#home/pricing-tuneup") &bull;
                 a.control-button(href="#home/pricing-antimalware") &bull;
                 a.control-button(href="#home/pricing-transfer") &bull;
@@ -184,8 +176,8 @@ html(lang="en")
               | headaches, too. Jet Computers delivers down-to-earth, affordable
               | services to help you get the most from the devices in your home
               | and your pockets. Bring your troubled machines and gadgets by
-              | for same-day diagnostics &ndash; complementary when you
-              | pay for repairs!
+              | for same-day diagnostics &ndash; complementary <strike>when you
+              | pay for repairs</strike> <em>through September 2015!</em>
             p
               | Jet Computers is here to take care of all your technical needs.
               | We can assist you with everything from PCs to mobile phones, with services including:

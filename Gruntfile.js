@@ -8,8 +8,14 @@ module.exports = function(grunt) {
       build: {
         files: {
           'index.html': 'src/pages/index.jade',
-          'twitter.html': 'src/pages/twitter.jade',
-          'consultation.html': 'src/pages/consultation.jade'
+          'twitter.html': 'src/pages/wrappers/twitter.jade',
+          'consultation.html': 'src/pages/wrappers/consultation.jade',
+          'residential/index.html': 'src/pages/redirects/residential.jade',
+          'residential.html': 'src/pages/redirects/residential.jade',
+          'business/index.html': 'src/pages/redirects/business.jade',
+          'business.html': 'src/pages/redirects/business.jade',
+          'map/index.html': 'src/pages/redirects/map.jade',
+          'map.html': 'src/pages/redirects/map.jade'
         }
       }
     },
@@ -92,7 +98,7 @@ module.exports = function(grunt) {
     watch: {
       gruntfile: {
         files: 'Gruntfile.js',
-        tasks: ['bump', 'watch']
+        tasks: ['build', 'bump']
       },
       vendor: {
         files: ['bower_components/**/*'],

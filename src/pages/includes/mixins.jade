@@ -1,31 +1,37 @@
-mixin meta(title)
+- var title = "Jet Computers - Services for PCs, Macs, Linux, Android, and iOS!"
+- var desc = "We've got the St Lucie and surrounding areas covered from desktop to smartphone; with expert repair, servicing, custom builds, and much more! Repairs start from just $39.99!"
+- var keywords = "computer, computers, computer repair, computer service, computer repairs, computer services, tablet, tablets, tablet repair, tablet service, tablet services, mobile, mobiles, mobile repair, mobile service, mobile repairs, mobile services, mac, macs, mac repair, mac repairs, mac service, mac services, virus, viruses, virus cleaning, virus removal, spyware, spyware cleaning, spyware removal, malware, malware cleaning, malware removal, cleaning, tuneup, removal, installation, windows, osx, linux, unix, freebsd, android, ios, security, computer security, online security"
+- var subject = "Computer repair and services"
+- var url = "https://jetcomputers.us"
+
+mixin meta(page)
   meta(charset="utf-8")
-  title #{title} - Jet Computers
+  title #{page} - Jet Computers
   meta(http-equiv="Content-Language" content="en")
 
   //- Begin search tags
-  meta(name="title" content=title + " - Jet Computers - Services for PCs, Macs, Linux, Android, and iOS!")
-  meta(name="description" content="We've got the St Lucie area covered from desktop to smartphone; with expert repair, servicing, custom builds, and much more! Repairs start from just $39.99!")
-  meta(name="keywords" content="computer, computers, computer repair, computer service, computer repairs, computer services, tablet, tablets, tablet repair, tablet service, tablet services, mobile, mobiles, mobile repair, mobile service, mobile repairs, mobile services, mac, macs, mac repair, mac repairs, mac service, mac services, virus, viruses, virus cleaning, virus removal, spyware, spyware cleaning, spyware removal, malware, malware cleaning, malware removal, cleaning, tuneup, removal, installation, windows, osx, linux, unix, freebsd, android, ios")
-  meta(name="subject" content="Computer repair and services")
-  meta(name='revised' content="Sunday, July 25th, 2015, 12:00 am")
-  link(rel="canonical" href="https://jetcomputers.us")
-  link(rel="alternate" href="https://jetcomputers.us" hreflang="x-default")
+  meta(name="title" content="#{page} - #{title}")
+  meta(name="description" content="#{desc}")
+  meta(name="keywords" content="#{keywords}")
+  meta(name="subject" content="#{subject}")
+  meta(name='revised' content="Friday, September 4th, 2015, 4:35 pm")
+  link(rel="canonical" href="#{url}")
+  link(rel="alternate" href="#{url}" hreflang="x-default")
   link(rel="publisher" href="https://google.com/+JetComputersPortSaintLucie")
   meta(name="robots" content="index, follow")
   //- End search tags
 
   //- Begin social tags
-  meta(property="og:title" content=title + " - Jet Computers - Services for PCs, Macs, Linux, Android, and iOS!")
+  meta(property="og:title" content="#{page} - #{title}")
   meta(property="og:type" content="website")
-  meta(property="og:image" content="")
-  meta(property="og:url" content="https://jetcomputers.us")
-  meta(property="og:description" content="We've got the Port St Lucie area covered from desktop to smartphone; with expert repair, servicing, custom builds, and much more! Repairs start from just $39.99!")
+  meta(property="og:image" content="#{url}/img/brand/mini_logo.png")
+  meta(property="og:url" content="#{url}")
+  meta(property="og:description" content="#{desc}")
   meta(property="twitter:card" content="summary")
-  meta(property="twitter:url" content="https://jetcomputers.us")
-  meta(property="twitter:title" content=title + " - Jet Computers - Services for PCs, Macs, Linux, Android, and iOS!")
-  meta(property="twitter:description" content="We've got the Port St Lucie area covered from desktop to smartphone; with expert repair, servicing, custom builds, and much more! Repairs start from just $39.99!")
-  meta(property="twitter:image" content="")
+  meta(property="twitter:url" content="#{url}")
+  meta(property="twitter:title" content="#{page} - #{title}")
+  meta(property="twitter:description" content="#{desc}")
+  meta(property="twitter:image" content="#{url}/img/brand/mini_logo.png")
   //- End social tags
 
   //- Begin mobile tags
@@ -35,4 +41,4 @@ mixin meta(title)
   //- End mobile tags
 
 mixin redirect(page)
-  meta(http-equiv="refresh" content="0; https://jetcomputers.us/#" + page)
+  meta(http-equiv="refresh" content="0; #{url}/##{page}")

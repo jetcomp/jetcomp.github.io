@@ -189,14 +189,14 @@ iframe {
 }
 .viewport > footer > * {
   position: relative;
-  bottom: 70px;
+  bottom: 62px;
 }
 .viewport > footer > .social-links {
   left: 10px;
   z-index: 1;
 }
 .viewport > footer > .payment-badge {
-  margin: 0 26px 0 0;
+  margin: -8px 26px 0 0;
   height: 32px;
   float: right;
   vertical-align: top;

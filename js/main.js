@@ -1,6 +1,7 @@
 var curNav = function() { return location.hash.substring(1).split('/')[0] || false; },
     curPage = curNav() || 'home',
     lastPage = '',
+    layzr,
     layzrs = 0,
     animEnd = 'webkitAnimationEnd mozAnimationEnd' +
                   'MSAnimationEnd oanimationend',
@@ -39,7 +40,7 @@ function _navTo(target, push) {
     if(history)
       history.replaceState(undefined, undefined, target);
     else
-      location.replace(target);    
+      location.replace(target);
 }
 
 /**
@@ -52,13 +53,13 @@ function _navTo(target, push) {
 function changePage(target, orientation) {
   var dirMap = ['Up', 'Right', 'Down', 'Left'];
 
-  // route or die
+  // Route or die
   if($('.page#' + target).length <= 0) {
     changePage(404, 0);
     return false;
   }
 
-  // for sanity
+  // For sanity
   orientation = orientation ? orientation % 4 : 1;
 
   _dbg('scrollTo') && console.log(_ts(), 'scrollTo', 0);
@@ -107,7 +108,6 @@ function changePage(target, orientation) {
                   });
               $('#loading-overlay .loading')
                   .addClass('fadeOutUp');
-              // $(this).remove();
             }, 1); // prevent racing
           })
     );
@@ -117,6 +117,7 @@ function changePage(target, orientation) {
 }
 
 function setBackground(page) {
+  // Determine image based on page
   var url = (page && page != 'home') ?'img/bg/' + page + '.jpg' : 'img/blank.png';
 
   _dbg('setBackground') && console.log(_ts(), 'setBackground', page || 'home', url);
@@ -124,29 +125,28 @@ function setBackground(page) {
   $('body').css('background-image', 'url(\'' + url + '\')');
 }
 
-var layzr;
-
-// let's begin
+// Let's begin
 $(document).ready(function() {
   location.hash || _navTo('#home', true);
 
+  // One-shot home tile animations
   $('#home .tile').one(animEnd, function() {
     $(this).removeClass('animated');
   });
 
+  // Set up Layzr and register callbacks
   layzr = new Layzr({
         threshold: 0,
         callback: function() {
           var page = curNav() || 'home',
-              $page = $('.page#' + page),
-              _eletype = $page.find(this).length >= 1 ? 'Page' : 'Misc';
+              $page = $('.page#' + page);
 
           (this.src || this.style.backgroundImage) && (
             this.src && layzrs++,
-            _dbg('load') && console.log(_ts(), 'load' + _eletype + 'Ele', this, layzr._getOffset(this)),
+            _dbg('load') && console.log(_ts(), 'load ele', this, layzr._getOffset(this)),
+            // Check overall status after each load
             $(this).one('load', function() {
-              _dbg('loaded') && console.log(_ts(), 'loaded' + _eletype + 'Ele', this);
-              console.log(layzrs, $('[data-layzr]'));
+              _dbg('loaded') && console.log(_ts(), 'loaded ele', this);
               (--layzrs <= 1) && (
                 _dbg('done') && console.log(_ts(), 'done', page),
                 $('#viewport-header')
@@ -168,17 +168,18 @@ $(document).ready(function() {
   changePage(curPage);
   setBackground(curPage);
 
-  // background hovers
+  // Background hovers
   $('.navlink:not([href=\'#home\'])').hover(function() {
     _dbg('hover') && console.log(_ts(), 'hover', location.hash, this.hash);
     setBackground(this.hash.substring(1));
   }, function() {
     (location.hash == '' || location.hash == '#' || location.hash.indexOf('#home') == 0 ||
-      // map hover is a special case
+      // Map hover is a special case
       (location.hash != '#map' && this.hash == '#map')
     ) && setBackground();
   });
 
+  // Navigation handling
   $(window).on('hashchange', function(e) {
     var newPage = curNav() || 'home';
     _dbg('nav') && console.log(_ts(), 'nav', curPage + ' -> ' + newPage)
@@ -187,15 +188,15 @@ $(document).ready(function() {
       _starttime = new Date().getTime();
       _dbg('clockReset') && console.log(_ts(), 'clockReset');
 
-      // home exits right instead of left
+      // Home exits right instead of left
       changePage(newPage, newPage == 'home' ? 1 : 3);
 
-      // prevent jump
+      // Prevent jump
       setTimeout(function() { window.scrollTo(0, 0); }, 1);
     }
   });
 
-  // inter-page nav
+  // Inter-page nav
   $('.back-button').click(function(e) {
     e.preventDefault();
 
@@ -208,7 +209,7 @@ $(document).ready(function() {
     }
   });
 
-  // no carousels in history
+  // No carousels in history
   $('.gallery .controls a').click(function(e) {
     _navTo(e.target.hash);
   });

@@ -107,6 +107,12 @@
     bottom: -22px;
     background: url('../img/arrow.png') center / contain;
   }
+  .tile-badge {
+    width: 70%;
+    position: absolute;
+    top: -15%;
+    right: -15%;
+  }
   .gallery > .item {
     display: inline-flex;
     flex-direction: column;
@@ -234,12 +240,6 @@ iframe {
   padding: initial;
   background: initial;
   box-shadow: none;
-}
-.special-badge {
-  width: 70%;
-  position: absolute;
-  top: -15%;
-  right: -15%;
 }
 .pagebar {
   margin-top: 2.5em;

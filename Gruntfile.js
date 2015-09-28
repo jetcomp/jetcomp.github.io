@@ -93,18 +93,18 @@ module.exports = function(grunt) {
     watch: {
       gruntfile: {
         files: 'Gruntfile.js',
-        tasks: ['build', 'bump']
+        tasks: ['build']
       },
       vendor: {
         files: ['bower_components/**/*'],
-        tasks: ['bower_concat', 'copy', 'bump'],
+        tasks: ['bower_concat', 'copy'],
         options: {
           livereload: true
         }
       },
       pages: {
         files: ['src/pages/**/*.jade', '!src/pages/includes/base.jade'],
-        tasks: ['jade', 'bump'],
+        tasks: ['jade'],
         options: {
           livereload: true
         }
@@ -118,14 +118,14 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: ['src/scripts/**/*.js', '!src/scripts/**/*.min.js'],
-        tasks: ['copy:main', 'bump'],
+        tasks: ['copy:main'],
         options: {
           livereload: true
         }
       },
       styles: {
         files: ['src/styles/**/*.less'],
-        tasks: ['less', 'bump'],
+        tasks: ['less'],
         options: {
           livereload: true
         }

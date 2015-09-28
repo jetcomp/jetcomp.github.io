@@ -1,7 +1,7 @@
 {
   "name": "jetcomp.github.io",
   "description": "Jet Computers' website - jetcomputers.us",
-  "version": "0.9.66",
+  "version": "0.9.67",
   "repository": {
     "type": "git",
     "url": "jetcomp/jetcomp.github.io"

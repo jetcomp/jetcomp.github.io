@@ -113,6 +113,19 @@
     top: -15%;
     right: -15%;
   }
+  .gallery {
+    pointer-events: none;
+  }
+  .gallery:hover > .item,
+  .gallery:hover > .item ~ .controls > .control-button {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  .gallery a {
+    pointer-events: auto;
+  }
   .gallery > .item {
     display: inline-flex;
     flex-direction: column;

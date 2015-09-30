@@ -163,6 +163,8 @@ h2 {
 }
 ul {
   display: inline-block;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
   padding: 9px;
 }
 iframe {

@@ -144,6 +144,161 @@
     text-shadow: none;
     background: rgba(255, 255, 255, 0.7);
   }
+  ul.detail-list {
+    display: block;
+    margin: auto;
+    max-width: 880px;
+    width: 100%;
+    min-height: 440px;
+    padding: 0.6em 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 42%, #cccccc 42%, #cccccc 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+    position: relative;
+    z-index: 1;
+    list-style-position: inside;
+  }
+  ul.detail-list,
+  ul.detail-list * {
+    box-sizing: border-box;
+  }
+  ul.detail-list.fa-ul > li:not(.detail):not(.default) {
+    padding-left: 2.2em;
+  }
+  ul.detail-list.fa-ul > li > .fa-li {
+    left: 3px;
+  }
+  ul.detail-list > *:not(.detail):not(.default) {
+    margin-right: 58%;
+    padding: 0.1em 0.1em 0.5em 0.5em;
+  }
+  ul.detail-list > li:not(.detail):not(.default) {
+    padding-left: 1.3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+  }
+  ul.detail-list > li.detail,
+  ul.detail-list > li.default {
+    width: 58%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: -1;
+  }
+  ul.detail-list > li.detail > div,
+  ul.detail-list > li.default > div {
+    height: 100%;
+    overflow-y: auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.84);
+  }
+  ul.detail-list > li.detail {
+    padding: 0.5em;
+    background-position: center;
+    background-size: cover;
+  }
+  ul.detail-list > li.detail:nth-of-type(2) {
+    background-image: url('../img/residential/1.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(2):before {
+    top: 0.5em;
+  }
+  ul.detail-list > li.detail:nth-of-type(4) {
+    background-image: url('../img/residential/2.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(4):before {
+    top: 2.28em;
+  }
+  ul.detail-list > li.detail:nth-of-type(6) {
+    background-image: url('../img/residential/3.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(6):before {
+    top: 4.06em;
+  }
+  ul.detail-list > li.detail:nth-of-type(8) {
+    background-image: url('../img/residential/4.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(8):before {
+    top: 5.84em;
+  }
+  ul.detail-list > li.detail:nth-of-type(10) {
+    background-image: url('../img/residential/5.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(10):before {
+    top: 7.62em;
+  }
+  ul.detail-list > li.detail:nth-of-type(12) {
+    background-image: url('../img/residential/6.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(12):before {
+    top: 9.4em;
+  }
+  ul.detail-list > li.detail:nth-of-type(14) {
+    background-image: url('../img/residential/7.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(14):before {
+    top: 11.18em;
+  }
+  ul.detail-list > li.detail:nth-of-type(16) {
+    background-image: url('../img/residential/8.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(16):before {
+    top: 12.96em;
+  }
+  ul.detail-list > li.detail:nth-of-type(18) {
+    background-image: url('../img/residential/9.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(18):before {
+    top: 14.74em;
+  }
+  ul.detail-list > li.detail:nth-of-type(20) {
+    background-image: url('../img/residential/10.jpg');
+  }
+  ul.detail-list > li.detail:nth-of-type(20):before {
+    top: 16.52em;
+  }
+  ul.detail-list > li.detail:before {
+    content: ' ';
+    display: inline-block;
+    width: 75%;
+    height: 1.55em;
+    position: absolute;
+    right: 100%;
+    border-right: 1px solid #ccc;
+    border-radius: 0.9em 0 0 0.9em;
+    background-color: #fcf692;
+  }
+  ul.detail-list > li.default {
+    display: initial;
+    z-index: -2;
+  }
+  ul.detail-list > li.default > div {
+    padding-top: 25%;
+    text-align: center;
+  }
+  ul.detail-list > li + .detail {
+    display: none;
+  }
+  ul.detail-list > li:hover + .detail,
+  ul.detail-list > li.detail:hover {
+    display: initial;
+  }
+  .capsule {
+    margin: 3px 6px 4px 5px;
+    padding: 4px 7px;
+    background-color: #e1e1db;
+    background-color: rgba(201, 202, 194, 0.4);
+    border-radius: 6px;
+  }
+  .capsule > * {
+    margin-left: 3px;
+    margin-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
   .cognito {
     margin: auto;
     width: 100%;

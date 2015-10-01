@@ -1,0 +1,114 @@
+.generate-detail(@n, @i: 1) when (@i <= @n) {
+  @j: (@i * 2);
+
+  &:nth-of-type(@{j}) {
+    background-image: url('../img/residential/@{i}.jpg');
+
+    &:before {
+      top: ((@i - 1) * 1.78em) + 0.5em;
+    }
+  }
+
+  .generate-detail(@n, (@i + 1));
+}
+
+ul.detail-list {
+  &, & * { box-sizing: border-box; }
+
+  display: block;
+  margin: auto;
+  max-width: 880px;
+  width: 100%;
+  min-height: 440px;
+  padding: 0.6em 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 42%, #ccc 42%, #ccc 100%),
+              linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+  position: relative;
+  z-index: 1;
+  list-style-position: inside;
+
+  // Special consideration for FontAwesome lists
+  &.fa-ul {
+    & > li:not(.detail):not(.default) {
+      padding-left: 2.2em;
+    }
+
+    & > li > .fa-li {
+      left: 3px;
+    }
+  }
+
+  & > *:not(.detail):not(.default) {
+    margin-right: 58%;
+    padding: 0.1em 0.1em 0.5em 0.5em;
+  }
+
+  & > li:not(.detail):not(.default) {
+    padding-left: 1.3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+  }
+
+  & > li {
+    &.detail,
+    &.default {
+      width: 58%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #fff;
+      z-index: -1;
+
+      & > div {
+        height: 100%;
+        overflow-y: auto;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.84);
+      }
+    }
+
+    &.detail {
+      padding: 0.5em;
+      background-position: center;
+      background-size: cover;
+
+      // Set to number of list items
+      .generate-detail(10);
+    }
+
+    &.detail:before {
+      content: ' ';
+      display: inline-block;
+      width: 75%; // (li width / .detail width) + desired overlap
+      height: 1.55em;
+      position: absolute;
+      right: 100%;
+      border-right: 1px solid #ccc;
+      border-radius: 0.9em 0 0 0.9em;
+      background-color: #fcf692;
+    }
+
+    &.default {
+      display: initial;
+      z-index: -2;
+
+      & > div {
+        padding-top: 25%;
+        text-align: center;
+      }
+    }
+
+    & + .detail {
+      display: none;
+    }
+
+    &:hover + .detail,
+    &.detail:hover {
+      display: initial;
+    }
+  }
+}

@@ -4,7 +4,7 @@
 - var subject = "Computer repair and services"
 - var url = "https://jetcomputers.us"
 
-mixin meta(page)
+mixin meta(page, ts)
   meta(charset="utf-8")
   title #{page} - Jet Computers
   meta(http-equiv="Content-Language" content="en")
@@ -14,7 +14,7 @@ mixin meta(page)
   meta(name="description" content="#{desc}")
   meta(name="keywords" content="#{keywords}")
   meta(name="subject" content="#{subject}")
-  meta(name='revised' content="Friday, September 4th, 2015, 4:35 pm")
+  meta(name='revised' content="#{ts}")
   link(rel="canonical" href="#{url}")
   link(rel="alternate" href="#{url}" hreflang="x-default")
   link(rel="publisher" href="https://google.com/+JetComputersPortSaintLucie")

@@ -136,7 +136,7 @@ $(document).ready(function() {
 
   // Set up Layzr and register callbacks
   layzr = new Layzr({
-        threshold: 0,
+        threshold: 500,
         callback: function() {
           var page = curNav() || 'home',
               $page = $('.page#' + page);

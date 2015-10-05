@@ -2,4 +2,4 @@ section#map.page.animated.no-print
   .content
     button.back-button &nbsp;
     h2 Come Find Us!
-    iframe(data-layzr="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMjHrzxczLo9bL4HWAx5f60a1mqzIAL2s&q=Jet Computers, Port St Lucie, FL 34953" allowfullscreen style="width: 100%; height: 600px; padding: 0; border: 0;" onload="this.style.height = $('#viewport').innerHTML + 'px';")
+    iframe(data-layzr="https://www.google.com/maps/embed/v1/place?key=AIzaSyBMjHrzxczLo9bL4HWAx5f60a1mqzIAL2s&q=Jet Computers, Port St Lucie, FL 34953" allowfullscreen style="width: 100%; height: 600px; padding: 0; border: 0;" onload="this.style.height = ($('#viewport').height() - $('#viewport-header').height() - $('#viewport-footer').height()) + 'px';")

@@ -104,6 +104,7 @@
 
   .content > h2:first-of-type {
     // avoid interference with .back-button
+    margin-left: 64px;
     text-align: right;
   }
 
@@ -114,6 +115,45 @@
 
   .page {
     margin-bottom: 0;
+  }
+
+  ul.detail-list {
+    min-height: initial;
+    padding: 0;
+    background: initial;
+
+    & > *:not(.detail):not(.default) {
+      margin-right: initial;
+      padding-top: 0.4em;
+    }
+
+    & > li {
+      background-color: #fff;
+
+      & > i.fa {
+        padding-top: 0.4em;
+      }
+
+      &:hover + .detail,
+      &.detail:hover {
+        display: block;
+      }
+
+      &.detail {
+        width: initial;
+        height: initial;
+        position: initial;
+        z-index: initial;
+
+        &:before {
+          content: initial;
+        }
+      }
+
+      &.default {
+        display: none;
+      }
+    }
   }
 
   // helpers

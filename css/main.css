@@ -803,6 +803,7 @@ display | like
     border-right: none;
   }
   .content > h2:first-of-type {
+    margin-left: 64px;
     text-align: right;
   }
   .tile {
@@ -811,6 +812,37 @@ display | like
   }
   .page {
     margin-bottom: 0;
+  }
+  ul.detail-list {
+    min-height: initial;
+    padding: 0;
+    background: initial;
+  }
+  ul.detail-list > *:not(.detail):not(.default) {
+    margin-right: initial;
+    padding-top: 0.4em;
+  }
+  ul.detail-list > li {
+    background-color: #fff;
+  }
+  ul.detail-list > li > i.fa {
+    padding-top: 0.4em;
+  }
+  ul.detail-list > li:hover + .detail,
+  ul.detail-list > li.detail:hover {
+    display: block;
+  }
+  ul.detail-list > li.detail {
+    width: initial;
+    height: initial;
+    position: initial;
+    z-index: initial;
+  }
+  ul.detail-list > li.detail:before {
+    content: initial;
+  }
+  ul.detail-list > li.default {
+    display: none;
   }
   .no-mobile {
     display: none;

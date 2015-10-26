@@ -287,11 +287,12 @@
     display: initial;
   }
   .capsule {
-    margin: 3px 6px 4px 5px;
-    padding: 4px 7px;
+    margin: 3px 6px 8px 5px;
+    padding: 7px 11px 9px 13px;
     background-color: #e1e1db;
     background-color: rgba(201, 202, 194, 0.4);
     border-radius: 6px;
+    overflow: auto;
   }
   .capsule > * {
     margin-left: 3px;
@@ -412,7 +413,7 @@ iframe {
   box-shadow: none;
 }
 .pagebar {
-  margin-top: 2.5em;
+  margin-top: 1em;
   text-align: center;
 }
 .pagebar > span {
@@ -440,6 +441,14 @@ iframe {
 }
 .avatar.brian {
   background: url('../img/pics/brian.jpg') center / contain;
+}
+figure {
+  display: inline-block;
+  margin: 0.6em 0.7em 1.5em 0.8em;
+  margin-bottom: 1.7em;
+  vertical-align: top;
+  font-size: 83%;
+  font-style: oblique;
 }
 .clear-float {
   float: none;
